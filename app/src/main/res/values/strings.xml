@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Front_End</string>
+    <string name="textview_m">TextView_M</string>
+    <string name="textview_b">TextView_B</string>
+    <string name="textview_h">TextView_H</string>
+    <string name="textview_c">TextView_C</string>
+    <string name="textview_r">TextView_R</string>
+    <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="todo3">TODO</string>
+    <string name="todo4">TODO</string>
 </resources>
