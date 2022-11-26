@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         Sights.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent New_Screen=new Intent(getApplicationContext(),SightsActivity.class);
-                startActivity(New_Screen);
+                //Intent New_Screen=new Intent(getApplicationContext(),SightsActivity.class);
+                //startActivity(New_Screen);
             }
         });
 
