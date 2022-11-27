@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.content.Intent;
 
 public class Information extends AppCompatActivity {
 
@@ -37,6 +38,18 @@ public class Information extends AppCompatActivity {
             public void onClick(View v) {
                 //Intent New_Screen=new Intent(getApplicationContext(),SightsActivity.class);
                 //startActivity(New_Screen);
+            }
+        });
+
+
+        //Handle button Photos---------------------------------
+        Intent Photos_Screen=new Intent(getApplicationContext(),Photos.class);
+
+        Photos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(Photos_Screen);
             }
         });
     }
