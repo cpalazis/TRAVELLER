@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Intent New=new Intent(getApplicationContext(),Photos.class);
-
+        //-----------------TESTING ACTIVITIES---------------------
+        //Intent New=new Intent(getApplicationContext(),Information.class);
         //startActivity(New);
 
     }
