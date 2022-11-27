@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         //-----------------TESTING ACTIVITIES---------------------
         //Intent New=new Intent(getApplicationContext(),Information.class);
         //startActivity(New);
+        //
 
     }
 }
