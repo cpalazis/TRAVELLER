@@ -6,4 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".LondonActivity">
 
+    <TextView
+        android:id="@+id/londonHeader"
+        android:layout_width="148dp"
+        android:layout_height="41dp"
+        android:fontFamily="sans-serif-black"
+        android:text="London"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.539"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <TextView
+        android:id="@+id/londonText"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:autoText="false"
+        android:text="London is the capital of England and the United Kingdom. London is the city with the highest population in the United Kingdom.  On the Thames, London has been a central city since it was founded by the Romans two millennia ago as Londinium. The Romans bridged the river Thames and built a road network to connect Londinium with the rest of the country.  London's original city centre, the City of London is England's smallest city. In 2011 had 7,375 inhabitants on an area of 2.9 km². The term &quot;London&quot; is used for the urban region which developed around this city centre. This area forms the region of London, the Greater London administrative unit led by the Mayor of London and the London Assembly.  London is one of the world's most important political, economic and cultural centres. London was the capital of the British Empire and so for almost three centuries the centre of power for large parts of the world.  The city has about 9.1 million inhabitants (2018). If one counts the entire metropolitan area of London (London Metropolitan Area), it has about 15 million people. The city is the largest in Europe by population. The climate is moderate. "
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/londonHeader"
+        app:layout_constraintVertical_bias="0.266" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
