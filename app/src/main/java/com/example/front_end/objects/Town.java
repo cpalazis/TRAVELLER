@@ -2,37 +2,39 @@ package com.example.front_end.objects;
 
 import java.util.List;
 
-public class City {
+public class Town {
 
     private String name;
     private String city;
     private double lat;
     private double lng;
     private float rate;
+    private long total_rating;
     private String information;
     private String information2;
     private List<String> images;
-    private List<CoffeeShop> coffeShops;
+    private List<CoffeeShop> coffeeShops;
     private List<Hospital> hospitals;
     private List<Sight> sights;
 
 
-    public City() {
+    public Town() {
     }
 
-    public City(String name, String city, double lat, double lng,
-                float rate, String information, String information2,
-                List<String> images, List<CoffeeShop> coffeShops,
+    public Town(String name, String city, double lat, double lng,
+                float rate, long total_rating, String information,
+                String information2, List<String> images, List<CoffeeShop> coffeeShops,
                 List<Hospital> hospitals, List<Sight> sights) {
         this.name = name;
         this.city = city;
         this.lat = lat;
         this.lng = lng;
         this.rate = rate;
+        this.total_rating = total_rating;
         this.information = information;
         this.information2 = information2;
         this.images = images;
-        this.coffeShops = coffeShops;
+        this.coffeeShops = coffeeShops;
         this.hospitals = hospitals;
         this.sights = sights;
     }
@@ -77,6 +79,14 @@ public class City {
         this.rate = rate;
     }
 
+    public long getTotal_rating() {
+        return total_rating;
+    }
+
+    public void setTotal_rating(long total_rating) {
+        this.total_rating = total_rating;
+    }
+
     public String getInformation() {
         return information;
     }
@@ -101,12 +111,12 @@ public class City {
         this.images = images;
     }
 
-    public List<CoffeeShop> getCoffeShops() {
-        return coffeShops;
+    public List<CoffeeShop> getCoffeeShops() {
+        return coffeeShops;
     }
 
-    public void setCoffeShops(List<CoffeeShop> coffeShops) {
-        this.coffeShops = coffeShops;
+    public void setCoffeeShops(List<CoffeeShop> coffeeShops) {
+        this.coffeeShops = coffeeShops;
     }
 
     public List<Hospital> getHospitals() {
