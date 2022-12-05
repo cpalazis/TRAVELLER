@@ -14,6 +14,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //-----------------TESTING ACTIVITIES---------------------
+        //Intent New=new Intent(getApplicationContext(),Information.class);
+        //startActivity(New);
+        //
         Button exit;
 
 
