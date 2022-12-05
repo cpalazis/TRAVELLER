@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RomeActivity">
+
+    <TextView
+        android:id="@+id/romeHeader"
+        android:layout_width="148dp"
+        android:layout_height="41dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Rome"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <TextView
+        android:id="@+id/romeText"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:autoText="false"
+        android:text="Rame (Latin: Roma) is the capital city of Italy. It is also the capital and largest city in the region of Lazio, and the geographical region of Latium. It is on the Tiber River and has 2.8 million people. An estimate by the OECD put the number of people of the city area of Rome at 3.47 million.When the Roman Empire was new, Rome was called the Eternal City because it was already very old.  Rome is well known for being the home of the Catholic Church, including its leader, the Pope. He lives in the Vatican City, which is an enclave in the north-west part of Rome"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.293" />
+</androidx.constraintlayout.widget.ConstraintLayout>

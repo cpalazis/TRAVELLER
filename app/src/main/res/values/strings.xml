@@ -1,13 +1,12 @@
 <resources>
     <string name="app_name">Front_End</string>
-    <string name="textview_m">TextView_M</string>
-    <string name="textview_b">TextView_B</string>
-    <string name="textview_h">TextView_H</string>
-    <string name="textview_c">TextView_C</string>
-    <string name="textview_r">TextView_R</string>
-    <string name="todo">TODO</string>
-    <string name="todo1">TODO</string>
-    <string name="todo2">TODO</string>
-    <string name="todo3">TODO</string>
-    <string name="todo4">TODO</string>
+    <string name="title_activity_towns">TownsActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>
