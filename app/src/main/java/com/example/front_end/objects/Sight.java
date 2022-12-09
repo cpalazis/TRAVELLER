@@ -10,22 +10,18 @@ public class Sight {
     private double lng;
     private float rate;
     private List<String> images;
-    private List<CoffeeShop> coffeeShops;
-    private List<Hospital> hospitals;
 
     public Sight() {
     }
 
     public Sight(String name, String city, double lat, double lng, float rate,
-                 List<String> images, List<CoffeeShop> coffeeShops, List<Hospital> hospitals) {
+                 List<String> images) {
         this.name = name;
         this.city = city;
         this.lat = lat;
         this.lng = lng;
         this.rate = rate;
         this.images = images;
-        this.coffeeShops = coffeeShops;
-        this.hospitals = hospitals;
     }
 
     public String getName() {
@@ -76,19 +72,4 @@ public class Sight {
         this.images = images;
     }
 
-    public List<CoffeeShop> getCoffeeShops() {
-        return coffeeShops;
-    }
-
-    public void setCoffeeShops(List<CoffeeShop> coffeeShops) {
-        this.coffeeShops = coffeeShops;
-    }
-
-    public List<Hospital> getHospitals() {
-        return hospitals;
-    }
-
-    public void setHospitals(List<Hospital> hospitals) {
-        this.hospitals = hospitals;
-    }
 }
