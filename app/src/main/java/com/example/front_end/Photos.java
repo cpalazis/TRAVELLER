@@ -63,18 +63,19 @@ public class Photos extends AppCompatActivity {
 
         CityName.setText("City name: "+"*******");
         //Picasso.with(this).load(url1).resize(600,300).into(img);
-        Picasso.get().load(url1).resize(200,100).into(imgButton1);
-        Picasso.get().load(url2).resize(200,100).into(imgButton2);
-        Picasso.get().load(url3).resize(200,100).into(imgButton3);
-        Picasso.get().load(url4).resize(200,100).into(imgButton4);
-        Picasso.get().load(url5).resize(200,100).into(imgButton5);
-        Picasso.get().load(url6).resize(200,100).into(imgButton6);
-        Picasso.get().load(url7).resize(200,100).into(imgButton7);
-        Picasso.get().load(url8).resize(200,100).into(imgButton8);
-        Picasso.get().load(url9).resize(200,100).into(imgButton9);
-        Picasso.get().load(url10).resize(200,100).into(imgButton10);
-        Picasso.get().load(url11).resize(200,100).into(imgButton11);
-        Picasso.get().load(url12).resize(200,100).into(imgButton12);
+        //Picasso.get().load(url12).resize(200,100).into(imgButton12);
+       Picasso.with(this).load(url1).resize(200,100).into(imgButton1);
+        Picasso.with(this).load(url2).resize(200,100).into(imgButton2);
+        Picasso.with(this).load(url3).resize(200,100).into(imgButton3);
+        Picasso.with(this).load(url4).resize(200,100).into(imgButton4);
+        Picasso.with(this).load(url5).resize(200,100).into(imgButton5);
+        Picasso.with(this).load(url6).resize(200,100).into(imgButton6);
+        Picasso.with(this).load(url7).resize(200,100).into(imgButton7);
+        Picasso.with(this).load(url8).resize(200,100).into(imgButton8);
+        Picasso.with(this).load(url9).resize(200,100).into(imgButton9);
+        Picasso.with(this).load(url10).resize(200,100).into(imgButton10);
+        Picasso.with(this).load(url11).resize(200,100).into(imgButton11);
+        Picasso.with(this).load(url12).resize(200,100).into(imgButton12);
 
 
         //-----------------------------------
@@ -82,7 +83,7 @@ public class Photos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CityName.setText("City name: "+city);
-                Picasso.get().load(url1).resize(600,300).into(img);
+                Picasso.with(Photos.this).load(url1).resize(600,300).into(img);
             }
         });
 
@@ -91,7 +92,7 @@ public class Photos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CityName.setText("City name: "+city);
-                Picasso.get().load(url2).resize(600,300).into(img);
+                Picasso.with(Photos.this).load(url2).resize(600,300).into(img);
             }
         });
 
@@ -100,7 +101,7 @@ public class Photos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CityName.setText("City name: "+city);
-                Picasso.get().load(url3).resize(600,300).into(img);
+                Picasso.with(Photos.this).load(url3).resize(600,300).into(img);
             }
         });
 
@@ -109,7 +110,7 @@ public class Photos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CityName.setText("City name: "+city);
-                Picasso.get().load(url4).resize(600,300).into(img);
+                Picasso.with(Photos.this).load(url4).resize(600,300).into(img);
             }
         });
 
@@ -118,7 +119,7 @@ public class Photos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CityName.setText("City name: "+city);
-                Picasso.get().load(url5).resize(600,300).into(img);
+                Picasso.with(Photos.this).load(url5).resize(600,300).into(img);
             }
         });
 
@@ -127,7 +128,7 @@ public class Photos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CityName.setText("City name: "+city);
-                Picasso.get().load(url6).resize(600,300).into(img);
+                Picasso.with(Photos.this).load(url6).resize(600,300).into(img);
             }
         });
 
@@ -136,7 +137,7 @@ public class Photos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CityName.setText("City name: "+city);
-                Picasso.get().load(url7).resize(600,300).into(img);
+                Picasso.with(Photos.this).load(url7).resize(600,300).into(img);
             }
         });
 
@@ -145,7 +146,7 @@ public class Photos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CityName.setText("City name: "+city);
-                Picasso.get().load(url8).resize(600,300).into(img);
+                Picasso.with(Photos.this).load(url8).resize(600,300).into(img);
             }
         });
 
@@ -154,7 +155,7 @@ public class Photos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CityName.setText("City name: "+city);
-                Picasso.get().load(url9).resize(600,300).into(img);
+                Picasso.with(Photos.this).load(url9).resize(600,300).into(img);
             }
         });
 
@@ -163,7 +164,7 @@ public class Photos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CityName.setText("City name: "+city);
-                Picasso.get().load(url10).resize(600,300).into(img);
+                Picasso.with(Photos.this).load(url10).resize(600,300).into(img);
             }
         });
 
@@ -172,7 +173,7 @@ public class Photos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CityName.setText("City name: "+city);
-                Picasso.get().load(url11).resize(600,300).into(img);
+                Picasso.with(Photos.this).load(url11).resize(600,300).into(img);
             }
         });
 
@@ -181,7 +182,7 @@ public class Photos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 CityName.setText("City name: "+city);
-                Picasso.get().load(url12).resize(600,300).into(img);
+                Picasso.with(Photos.this).load(url12).resize(600,300).into(img);
             }
         });
 

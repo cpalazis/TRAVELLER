@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TownsActivity">
+    tools:context=".TopFive">
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,7 +29,7 @@
                     android:id="@+id/imageLondon"
                     android:layout_width="200dp"
                     android:layout_height="150dp"
-                    app:srcCompat="@drawable/london" />
+                    app:srcCompat="@android:drawable/ic_menu_gallery" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -41,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="100px"
                     android:layout_weight="1"
-                    android:text="London" />
+                    android:text="Place1" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -58,7 +59,7 @@
                     android:id="@+id/imageNewYork"
                     android:layout_width="200dp"
                     android:layout_height="150dp"
-                    app:srcCompat="@drawable/new_york" />
+                    app:srcCompat="@android:drawable/ic_menu_gallery" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -71,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="130px"
                     android:layout_weight="1"
-                    android:text="New York" />
+                    android:text="Place2" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -88,7 +89,7 @@
                     android:id="@+id/imageView10"
                     android:layout_width="200dp"
                     android:layout_height="150dp"
-                    app:srcCompat="@drawable/paris" />
+                    app:srcCompat="@android:drawable/ic_menu_gallery" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -101,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="100px"
                     android:layout_weight="1"
-                    android:text="Paris" />
+                    android:text="Place3" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -118,7 +119,7 @@
                     android:id="@+id/imageView11"
                     android:layout_width="200dp"
                     android:layout_height="150dp"
-                    app:srcCompat="@drawable/rome" />
+                    app:srcCompat="@android:drawable/ic_menu_gallery" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -131,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="130px"
                     android:layout_weight="1"
-                    android:text="Rome" />
+                    android:text="Place4" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -148,7 +149,7 @@
                     android:id="@+id/imageView12"
                     android:layout_width="200dp"
                     android:layout_height="150dp"
-                    app:srcCompat="@drawable/tokyo" />
+                    app:srcCompat="@android:drawable/ic_menu_gallery" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -161,7 +162,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="120px"
                     android:layout_weight="1"
-                    android:text="Tokyo" />
+                    android:text="Place5" />
 
                 <Space
                     android:layout_width="wrap_content"
@@ -171,5 +172,7 @@
 
         </LinearLayout>
     </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

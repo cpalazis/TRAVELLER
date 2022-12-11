@@ -33,11 +33,80 @@ public class Information extends AppCompatActivity {
         General_Informations=findViewById(R.id.button8);
 
 
+        Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
+
+        //Handle button Museums---------------------------------
+        Museums.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Put data in TopFive Activity for top 5 museums
+
+                startActivity(Top_Screen);
+            }
+        });
+
+        //Handle button Hotels---------------------------------
+        Hotels.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Put data in TopFive Activity for top 5 hotels
+
+                startActivity(Top_Screen);
+            }
+        });
+
+        //Handle button Banks---------------------------------
+        Banks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Put data in TopFive Activity for top 5 banks
+
+                startActivity(Top_Screen);
+            }
+        });
+
+        //Handle button Caffe---------------------------------
+        Caffe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Put data in TopFive Activity for top 5 caffe
+
+                startActivity(Top_Screen);
+            }
+        });
+
+        //Handle button Restaurants---------------------------------
+        Restaurants.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Put data in TopFive Activity for top 5 restaurants
+
+                startActivity(Top_Screen);
+            }
+        });
+
+        //Handle button Sights---------------------------------
         Sights.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent New_Screen=new Intent(getApplicationContext(),SightsActivity.class);
-                //startActivity(New_Screen);
+                //Put data in TopFive Activity for top 5 sights
+
+                startActivity(Top_Screen);
+            }
+        });
+
+
+        //Handle button General_Informations---------------------------------
+        Intent Disp_Screen=new Intent(getApplicationContext(),Display.class);
+
+        General_Informations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Put data in Display Activity
+                // Insert general information for the city who looking for
+                //and one famous photo
+
+                startActivity(Disp_Screen);
             }
         });
 
@@ -48,6 +117,8 @@ public class Information extends AppCompatActivity {
         Photos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Put data in Photos Activity
+                // Insert the 12 famous photos for the city who looking for
 
                 startActivity(Photos_Screen);
             }

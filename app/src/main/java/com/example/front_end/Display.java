@@ -33,7 +33,7 @@ public class Display extends AppCompatActivity {
         TextView descriptionTxt = findViewById(R.id.descriptionTextView);
 
         //---------------------------START DATA FOR TESTING----------------------------------
-        String str = "name of place ******";
+        String str = "name of place" + " ******";
         String url = "https://upload.wikimedia.org/wikipedia/commons/4/49/Corfu_Vlacherna_R01.jpg";
         String textInfo = "xxxxxxxx"+"yyyyyyyy"+"********"+"ooooooooo";
 
@@ -44,8 +44,8 @@ public class Display extends AppCompatActivity {
         // OR display the string into TextView from object
 
         //Show the Place image
-        //Picasso.with(this).load(url).resize(600,300).into(img);
-        Picasso.get().load(url).resize(600,300).into(img);
+        Picasso.with(this).load(url).resize(600,300).into(img);
+        //Picasso.get().load(url).resize(600,300).into(img);
 
 
         //Show the Place description
