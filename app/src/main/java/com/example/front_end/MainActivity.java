@@ -3,6 +3,7 @@ package com.example.front_end;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -14,14 +15,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button exit;
+        //-----------------TESTING ACTIVITIES---------------------
+        Intent New=new Intent(getApplicationContext(),TownsActivity.class);
+        startActivity(New);
+        //
 
 
-        exit = findViewById(R.id.button_exit);
+       Button exit;
 
-        exit.setOnClickListener(v -> {
-            finish();
-            System.exit(0);
+
+       exit = findViewById(R.id.button_exit);
+
+       exit.setOnClickListener(v -> {
+          finish();
+          System.exit(0);
         });
     }
 }

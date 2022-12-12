@@ -15,8 +15,7 @@ import java.util.List;
 public class TownsActivity extends AppCompatActivity {
     private List<Button> buttonCityName = new ArrayList<>();
 
-    public TownsActivity() {
-    }
+
 
 
     @SuppressLint("MissingInflatedId")
@@ -24,6 +23,9 @@ public class TownsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_towns);
+
+        //start the code from here
+        setTitle("Top 5 Cities Activity");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -33,39 +35,51 @@ public class TownsActivity extends AppCompatActivity {
         buttonCityName.add(findViewById(R.id.buttonRome));
         buttonCityName.add(findViewById(R.id.buttonTokyo));
 
+
+
         buttonCityName.get(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent london = new Intent(getApplicationContext(),LondonActivity.class);
-                startActivity(london);
+                //Ask informations for London
+                //Put data in Information Activity
+                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
+                startActivity(Info_Screen);
             }
         });
         buttonCityName.get(1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent newYork = new Intent(getApplicationContext(),NewYorkActivity.class);
-                startActivity(newYork);
+                //Ask informations for New York
+                //Put data in Information Activity
+                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
+                startActivity(Info_Screen);
             }
         });
         buttonCityName.get(2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent paris = new Intent(getApplicationContext(),ParisActivity.class);
-                startActivity(paris);
+                //Ask informations for Paris
+                //Put data in Information Activity
+                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
+                startActivity(Info_Screen);
             }
         });
         buttonCityName.get(3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent rome = new Intent(getApplicationContext(),RomeActivity.class);
-                startActivity(rome);
+                //Ask informations for Rome
+                //Put data in Information Activity
+                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
+                startActivity(Info_Screen);
             }
         });
         buttonCityName.get(4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent tokyo = new Intent(getApplicationContext(),TokyoActivity.class);
-                startActivity(tokyo);
+                //Ask informations for Tokyo
+                //Put data in Information Activity
+                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
+                startActivity(Info_Screen);
             }
         });
 
