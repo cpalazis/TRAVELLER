@@ -15,7 +15,7 @@ public class Display extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //start the code from here
         setTitle("Display Activity");
 

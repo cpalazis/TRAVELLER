@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //-----------------TESTING ACTIVITIES---------------------
-        //Intent New=new Intent(getApplicationContext(),TownsActivity.class);
-        //startActivity(New);
+        Intent New=new Intent(getApplicationContext(),TownsActivity.class);
+        startActivity(New);
         //
 
 

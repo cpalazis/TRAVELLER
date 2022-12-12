@@ -14,8 +14,7 @@ import java.util.List;
 public class TopFive extends AppCompatActivity {
     private List<Button> buttonPlaceName = new ArrayList<>();
 
-    public TopFive() {
-    }
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -35,12 +34,13 @@ public class TopFive extends AppCompatActivity {
         buttonPlaceName.add(findViewById(R.id.buttonPlace4));
         buttonPlaceName.add(findViewById(R.id.buttonPlace5));
 
-        Intent Display_Screen = new Intent(getApplicationContext(),Display.class);
+
 
         buttonPlaceName.get(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ////Put data in Display Activity for 1st place
+                Intent Display_Screen = new Intent(getApplicationContext(),Display.class);
                 startActivity(Display_Screen);
             }
         });
@@ -48,6 +48,7 @@ public class TopFive extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ////Put data in Display Activity for 2nd place
+                Intent Display_Screen = new Intent(getApplicationContext(),Display.class);
                 startActivity(Display_Screen);
             }
         });
@@ -55,6 +56,7 @@ public class TopFive extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ////Put data in Display Activity for 3rd place
+                Intent Display_Screen = new Intent(getApplicationContext(),Display.class);
                 startActivity(Display_Screen);
             }
         });
@@ -62,6 +64,7 @@ public class TopFive extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ////Put data in Display Activity for 4th place
+                Intent Display_Screen = new Intent(getApplicationContext(),Display.class);
                 startActivity(Display_Screen);
             }
         });
@@ -69,6 +72,7 @@ public class TopFive extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ////Put data in Display Activity for 5th place
+                Intent Display_Screen = new Intent(getApplicationContext(),Display.class);
                 startActivity(Display_Screen);
             }
         });

@@ -33,13 +33,13 @@ public class Information extends AppCompatActivity {
         General_Informations=findViewById(R.id.button8);
 
 
-        Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
         //Handle button Museums---------------------------------
         Museums.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Put data in TopFive Activity for top 5 museums
+                Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
                 startActivity(Top_Screen);
             }
@@ -50,6 +50,7 @@ public class Information extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Put data in TopFive Activity for top 5 hotels
+                Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
                 startActivity(Top_Screen);
             }
@@ -60,6 +61,7 @@ public class Information extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Put data in TopFive Activity for top 5 banks
+                Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
                 startActivity(Top_Screen);
             }
@@ -70,6 +72,7 @@ public class Information extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Put data in TopFive Activity for top 5 caffe
+                Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
                 startActivity(Top_Screen);
             }
@@ -80,6 +83,7 @@ public class Information extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Put data in TopFive Activity for top 5 restaurants
+                Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
                 startActivity(Top_Screen);
             }
@@ -90,6 +94,7 @@ public class Information extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Put data in TopFive Activity for top 5 sights
+                Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
                 startActivity(Top_Screen);
             }
@@ -97,7 +102,7 @@ public class Information extends AppCompatActivity {
 
 
         //Handle button General_Informations---------------------------------
-        Intent Disp_Screen=new Intent(getApplicationContext(),Display.class);
+
 
         General_Informations.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,21 +110,21 @@ public class Information extends AppCompatActivity {
                 //Put data in Display Activity
                 // Insert general information for the city who looking for
                 //and one famous photo
-
+                Intent Disp_Screen=new Intent(getApplicationContext(),Display.class);
                 startActivity(Disp_Screen);
             }
         });
 
 
         //Handle button Photos---------------------------------
-        Intent Photos_Screen=new Intent(getApplicationContext(),Photos.class);
+
 
         Photos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Put data in Photos Activity
                 // Insert the 12 famous photos for the city who looking for
-
+                Intent Photos_Screen=new Intent(getApplicationContext(),Photos.class);
                 startActivity(Photos_Screen);
             }
         });
