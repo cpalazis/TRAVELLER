@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="54dp"
+        android:layout_height="58dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,12 +20,81 @@
 
     <Button
         android:id="@+id/button_exit"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="56dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="28dp"
         android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.918"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="66dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextMultiLine2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.169"
+        app:srcCompat="@android:drawable/ic_menu_search" />
+
+    <Button
+        android:id="@+id/button_search"
+        android:layout_width="65dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="36dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/editTextTextMultiLine2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.17" />
+
+    <EditText
+        android:id="@+id/editText_findCity"
+        android:layout_width="208dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="564dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="153dp"
+        android:layout_height="27dp"
+        android:textStyle="italic"
+        android:textSize="18dp"
+        android:text="Search for Town..."
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_top_cities"
+        android:layout_width="186dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="156dp"
+        android:background="@android:color/transparent"
+        android:textSize="18dp"
+        android:text="Top Town's"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

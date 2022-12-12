@@ -16,11 +16,11 @@ public class Service {
         void onError(String message);
     }
 
-    public void getJSONObject(Context context, String addUrl, String name, VolleyResponseListener volleyResponseListener){
+    public void getJSONObject(Context context, String addUrl, VolleyResponseListener volleyResponseListener){
         String Url = connectUrl(url, addUrl);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
             volleyResponseListener.onResponse(response);
-        }, error -> {volleyResponseListener.onError(name+" not found");});
+        }, error -> {volleyResponseListener.onError(addUrl+" not found");});
 
         Singleton.getSingleton(context).addToRequestQueue(jsonObjectRequest);
     }

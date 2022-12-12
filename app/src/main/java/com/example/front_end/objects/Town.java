@@ -13,9 +13,7 @@ public class Town {
     private String information;
     private String information2;
     private List<String> images;
-    private List<CoffeeShop> coffeeShops;
-    private List<Hospital> hospitals;
-    private List<Sight> sights;
+
 
 
     public Town() {
@@ -23,8 +21,7 @@ public class Town {
 
     public Town(String name, String city, double lat, double lng,
                 float rate, long total_rating, String information,
-                String information2, List<String> images, List<CoffeeShop> coffeeShops,
-                List<Hospital> hospitals, List<Sight> sights) {
+                String information2, List<String> images ) {
         this.name = name;
         this.city = city;
         this.lat = lat;
@@ -34,9 +31,7 @@ public class Town {
         this.information = information;
         this.information2 = information2;
         this.images = images;
-        this.coffeeShops = coffeeShops;
-        this.hospitals = hospitals;
-        this.sights = sights;
+
     }
 
     public String getName() {
@@ -111,27 +106,4 @@ public class Town {
         this.images = images;
     }
 
-    public List<CoffeeShop> getCoffeeShops() {
-        return coffeeShops;
-    }
-
-    public void setCoffeeShops(List<CoffeeShop> coffeeShops) {
-        this.coffeeShops = coffeeShops;
-    }
-
-    public List<Hospital> getHospitals() {
-        return hospitals;
-    }
-
-    public void setHospitals(List<Hospital> hospitals) {
-        this.hospitals = hospitals;
-    }
-
-    public List<Sight> getSights() {
-        return sights;
-    }
-
-    public void setSights(List<Sight> sights) {
-        this.sights = sights;
-    }
 }
