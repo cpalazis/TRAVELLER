@@ -8,7 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Service {
-    final static String url = "http://localhost:3000/";
+    final static String url = "http://localhost:3000";
 
     public interface VolleyResponseListener {
         void onResponse(JSONObject jsonObject);
@@ -27,6 +27,7 @@ public class Service {
 
     public void getJSONArray(Context context, String addUrl, VolleyResponseListener volleyResponseListener){
         String Url = connectUrl(url, addUrl);
+
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, response -> {
             volleyResponseListener.onResponse(response);
         }, error -> {volleyResponseListener.onError("There is no response!!!");});
