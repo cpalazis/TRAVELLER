@@ -4,7 +4,7 @@ public class Hospital {
     private String name;
     private String placeId;
     private String vicinity;
-    private float rate;
+    private float rating;
     private double lat;
     private double lng;
 
@@ -16,7 +16,7 @@ public class Hospital {
         this.name = name;
         this.placeId = placeId;
         this.vicinity = vicinity;
-        this.rate = rate;
+        this.rating = rate;
         this.lat = lat;
         this.lng = lng;
     }
@@ -45,14 +45,6 @@ public class Hospital {
         this.vicinity = vicinity;
     }
 
-    public float getRate() {
-        return rate;
-    }
-
-    public void setRate(float rate) {
-        this.rate = rate;
-    }
-
     public double getLat() {
         return lat;
     }
@@ -67,5 +59,13 @@ public class Hospital {
 
     public void setLng(double lng) {
         this.lng = lng;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
     }
 }

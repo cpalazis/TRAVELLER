@@ -8,10 +8,10 @@ public class Town {
     private String city;
     private double lat;
     private double lng;
-    private float rate;
-    private long total_rating;
-    private String information;
-    private String information2;
+    private float avgRating;
+    private long totalRatings;
+    private String body;
+    private String excerpt;
     private List<String> images;
 
 
@@ -26,10 +26,10 @@ public class Town {
         this.city = city;
         this.lat = lat;
         this.lng = lng;
-        this.rate = rate;
-        this.total_rating = total_rating;
-        this.information = information;
-        this.information2 = information2;
+        this.avgRating = rate;
+        this.totalRatings = total_rating;
+        this.body = information;
+        this.excerpt= information2;
         this.images = images;
 
     }
@@ -66,37 +66,7 @@ public class Town {
         this.lng = lng;
     }
 
-    public float getRate() {
-        return rate;
-    }
 
-    public void setRate(float rate) {
-        this.rate = rate;
-    }
-
-    public long getTotal_rating() {
-        return total_rating;
-    }
-
-    public void setTotal_rating(long total_rating) {
-        this.total_rating = total_rating;
-    }
-
-    public String getInformation() {
-        return information;
-    }
-
-    public void setInformation(String information) {
-        this.information = information;
-    }
-
-    public String getInformation2() {
-        return information2;
-    }
-
-    public void setInformation2(String information2) {
-        this.information2 = information2;
-    }
 
     public List<String> getImages() {
         return images;
@@ -106,4 +76,35 @@ public class Town {
         this.images = images;
     }
 
+    public float getAvgRating() {
+        return avgRating;
+    }
+
+    public void setAvgRating(float avgRating) {
+        this.avgRating = avgRating;
+    }
+
+    public long getTotalRatings() {
+        return totalRatings;
+    }
+
+    public void setTotalRatings(long totalRatings) {
+        this.totalRatings = totalRatings;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public String getExcerpt() {
+        return excerpt;
+    }
+
+    public void setExcerpt(String excerpt) {
+        this.excerpt = excerpt;
+    }
 }

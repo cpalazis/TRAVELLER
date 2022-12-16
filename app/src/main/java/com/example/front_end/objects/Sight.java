@@ -8,21 +8,28 @@ public class Sight {
     private String city;
     private double lat;
     private double lng;
-    private float rate;
+    private float avgRating;
+    private long totalRatings;
+    private String excerpt;
     private List<String> images;
 
     public Sight() {
+
     }
 
     public Sight(String name, String city, double lat, double lng, float rate,
-                 List<String> images) {
+                 long totalRatings, String excerpt, List<String> images) {
         this.name = name;
         this.city = city;
         this.lat = lat;
         this.lng = lng;
-        this.rate = rate;
+        this.avgRating = rate;
+        this.totalRatings = totalRatings;
+        this.excerpt = excerpt;
         this.images = images;
     }
+
+
 
     public String getName() {
         return name;
@@ -56,13 +63,7 @@ public class Sight {
         this.lng = lng;
     }
 
-    public float getRate() {
-        return rate;
-    }
 
-    public void setRate(float rate) {
-        this.rate = rate;
-    }
 
     public List<String> getImages() {
         return images;
@@ -72,4 +73,27 @@ public class Sight {
         this.images = images;
     }
 
+    public long getTotalRatings() {
+        return totalRatings;
+    }
+
+    public void setTotalRatings(long totalRatings) {
+        this.totalRatings = totalRatings;
+    }
+
+    public String getExcerpt() {
+        return excerpt;
+    }
+
+    public void setExcerpt(String excerpt) {
+        this.excerpt = excerpt;
+    }
+
+    public float getAvgRating() {
+        return avgRating;
+    }
+
+    public void setAvgRating(float avgRating) {
+        this.avgRating = avgRating;
+    }
 }
