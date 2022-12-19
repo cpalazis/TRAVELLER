@@ -1,18 +1,13 @@
 package com.example.front_end;
 
 
-
-import static android.icu.lang.UCharacter.toLowerCase;
-
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.front_end.dictionary.Words;
 import com.example.front_end.objects.*;
 import com.example.front_end.dictionary.ParsedRequest;
@@ -27,21 +22,19 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button exit, top, search;
-    private EditText editText;
-    ArrayList<String> list = null;
-    String halfUrl;
-    String activity;
-    Service service;
-    Parser parser;
-    ParsedRequest parsedRequest;
-    Gson gson;
+
+    ArrayList<String> list = new ArrayList<>();
+
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button exit, top, search;
+        EditText editText;
+
 
 
        exit = findViewById(R.id.button_exit);
@@ -52,13 +45,22 @@ public class MainActivity extends AppCompatActivity {
        String city = getIntent().getStringExtra("city");
        String place = getIntent().getStringExtra("place");
        String nearby = getIntent().getStringExtra("nearby");
-       activity = getIntent().getStringExtra("activity");
+       String activity = getIntent().getStringExtra("activity");
 
-       if(list != null){
+       if(city != null){
+           list = setTheList(city, place, nearby, activity);
+           city = "";
+           place = "";
+           nearby = "";
+           activity = "";
+           setContentView(R.layout.loading);
            list = listToLower(list);
-           halfUrl = connectUrl(list);
-           parsedRequest = parser.runParser(list);
-           findTheJsonToSend(parsedRequest);
+           city = null;
+           String halfUrl = connectUrl(list);
+           Parser parser = new Parser();
+           ParsedRequest parsedRequest = parser.runParser(list);
+           recoverTheDataToSend(parsedRequest, halfUrl, getActivityString(list));
+
        }
 
        exit.setOnClickListener(v -> {
@@ -109,20 +111,45 @@ public class MainActivity extends AppCompatActivity {
        });
     }
 
-    private void findTheJsonToSend(ParsedRequest parse) {
+    private String getActivityString(ArrayList<String> list) {
+        int size = list.size();
+        return list.get(size-1);
+    }
+
+    private void recoverTheDataToSend(ParsedRequest parsedRequest, String halfUrl, String activity) {
+        findTheJsonToSend(parsedRequest, halfUrl, activity);
+    }
+
+    private ArrayList<String> setTheList(String city, String place, String nearby, String activity) {
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add(0, toLower(city));
+        if(place != null){
+            arrayList.add(1, toLower(place));
+        }
+        if(nearby != null){
+            arrayList.add(2, toLower(nearby));
+        }
+        if(activity != null){
+            arrayList.add(3, toLower(activity));
+        }
+        return arrayList;
+    }
+
+    private void findTheJsonToSend(ParsedRequest parse, String halfUrl, String activity) {
         switch (parse.getWordType().getWords()){
             case ARRAYLIST:
-                sendJsonArrayRequest(parse.getWords());
+                sendJsonArrayRequest(parse.getWords(), halfUrl, activity);
             case HOSPITAL:
             case TOWN:
             case COFFEESHOP:
             case SIGHT:
-                sendJsonObjectRequest(parse.getWords());
+                sendJsonObjectRequest(parse.getWords(), halfUrl, activity);
         }
 
     }
 
-    private void sendJsonObjectRequest(Words words) {
+    private void sendJsonObjectRequest(Words words, String halfUrl, String activity) {
+        Service service = new Service();
         switch (words){
             case SENDTOWN:
                 service.getJSONObject(this, halfUrl, new Service.VolleyResponseListener() {
@@ -139,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(String message) {
-                        showErrorMessage(message);
+                        showErrorMessage(message, activity);
                     }
                 });
                 break;
@@ -158,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(String message) {
-                        showErrorMessage(message);
+                        showErrorMessage(message, activity);
                     }
                 });
                 break;
@@ -177,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(String message) {
-                        showErrorMessage(message);
+                        showErrorMessage(message, activity);
                     }
                 });
                 break;
@@ -196,17 +223,19 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(String message) {
-                        showErrorMessage(message);
+                        showErrorMessage(message, activity);
                     }
                 });
         }
     }
 
-    private void showErrorMessage(String message) {
+    private void showErrorMessage(String message, String activity) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        openActivity(activity);
     }
 
-    private void sendJsonArrayRequest(Words words) {
+    private void sendJsonArrayRequest(Words words, String halfUrl, String activity) {
+        Service service = new Service();
         switch (words){
             case SENDTOWN:
                 service.getJSONArray(this, halfUrl, new Service.VolleyResponseListener() {
@@ -223,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(String message) {
-                        showErrorMessage(message);
+                        showErrorMessage(message, activity);
                     }
                 });
                 break;
@@ -242,7 +271,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(String message) {
-                        showErrorMessage(message);
+                        showErrorMessage(message, activity);
                     }
                 });
                 break;
@@ -261,7 +290,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(String message) {
-                        showErrorMessage(message);
+                        showErrorMessage(message, activity);
                     }
                 });
                 break;
@@ -280,7 +309,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(String message) {
-                        showErrorMessage(message);
+                        showErrorMessage(message, activity);
                     }
                 });
                 break;
@@ -288,6 +317,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private ArrayList setJsonObject(JSONObject object, Words words){
+        Gson gson = new Gson();
         ArrayList arrayList = new ArrayList<>();
         switch(words){
             case TOWN:
@@ -307,6 +337,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private ArrayList setJsonOnArrayList(JSONArray json, Words word){
+        Gson gson = new Gson();
         ArrayList arrayList;
         switch(word){
             case TOWN:
@@ -373,9 +404,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String connectUrl(ArrayList<String> arrayList){
-        String newUrl = "";
+        String newUrl = null;
         for(int i = 0; i < arrayList.size(); i++){
-            newUrl = "/"+arrayList.get(i);
+            newUrl = newUrl + "/"+arrayList.get(i);
         }
         return newUrl;
     }

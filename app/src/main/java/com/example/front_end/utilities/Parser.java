@@ -40,7 +40,6 @@ public class Parser {
     }
 
     private ParsedRequest findTheClass(ArrayList<String> list, int size) {
-        ParsedRequest parsedRequest = new ParsedRequest();
         switch(size){
             case 1:
                 return processOneClass(list.get(0));
@@ -52,7 +51,7 @@ public class Parser {
                 return processThreeClass(list);
 
         }
-        throw new IllegalStateException("Wrong number: "+size);
+        throw new IllegalStateException("Wrong size: "+size);
     }
 
     private ParsedRequest processThreeClass(ArrayList<String> list) {
@@ -65,7 +64,7 @@ public class Parser {
                 return new ParsedRequest(Words.SENDHOSPITAL, new WordType(list.get(2), Words.ARRAYLIST));
 
             case "nearbycoffeeshops":
-                return new ParsedRequest(Words.SENDCOFFEESHOP, new WordType(list.get(2), Words.COFFEESHOP));
+                return new ParsedRequest(Words.SENDCOFFEESHOP, new WordType(list.get(2), Words.ARRAYLIST));
 
         }
         throw new IllegalStateException("Wrong word: "+list.get(2));
@@ -91,14 +90,13 @@ public class Parser {
     }
 
     private ParsedRequest processOneClass(String string) {
-        ParsedRequest parsedRequest;
-        if(dictionary.containsKey(string)){
-            return new ParsedRequest(Words.SENDTOWN, new WordType("town", Words.ARRAYLIST));
-        }
-        else{
-            return new ParsedRequest(Words.SENDTOWN, new WordType("town", Words.TOWN));
-        }
+        WordType wordtype;
+
+        return new ParsedRequest(Words.SENDTOWN, new WordType(string, Words.TOWN));
+
     }
+
+
 
     static int findListSize(ArrayList<String> arrayList){
         return arrayList.size();
