@@ -10,4 +10,6 @@ public enum Words {
     SENDHOSPITAL,
     SENDCOFFEESHOP,
     SENDSIGHT,
+    ERROR,
+    SENDERROR,
 }
