@@ -1,11 +1,16 @@
 package com.example.front_end;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.content.Intent;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.front_end.utilities.UtilityClass;
+
+import java.util.ArrayList;
 
 public class Information extends AppCompatActivity {
 
@@ -32,16 +37,30 @@ public class Information extends AppCompatActivity {
         Sights=findViewById(R.id.button7);
         General_Informations=findViewById(R.id.button8);
 
+        //TextView infoTxt shows the name of the city
+        TextView infoTxt = findViewById(R.id.textView);
+
+
+        ArrayList<String> cities = new ArrayList<>();
+        cities= UtilityClass.getInstance().getList();
+
+        if (cities != null){
+            infoTxt.setText(cities.get(0));
+        }
+
 
 
         //Handle button Museums---------------------------------
         Museums.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Put data in TopFive Activity for top 5 museums
-                Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
-                startActivity(Top_Screen);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
+                intent.putExtra("place","Museums");  //the name of place
+                intent.putExtra("activity","TopFive"); //Put data in TopFive Activity for top 5 museums
+                startActivity(intent);
+
             }
         });
 
@@ -49,10 +68,13 @@ public class Information extends AppCompatActivity {
         Hotels.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Put data in TopFive Activity for top 5 hotels
-                Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
-                startActivity(Top_Screen);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
+                intent.putExtra("place","Hotels");  //the name of place
+                intent.putExtra("activity","TopFive");  //Put data in TopFive Activity for top 5 hotels
+                startActivity(intent);
+
             }
         });
 
@@ -60,10 +82,13 @@ public class Information extends AppCompatActivity {
         Banks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Put data in TopFive Activity for top 5 banks
-                Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
-                startActivity(Top_Screen);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
+                intent.putExtra("place","Banks");  //the name of place
+                intent.putExtra("activity","TopFive");    //Put data in TopFive Activity for top 5 banks
+                startActivity(intent);
+
             }
         });
 
@@ -71,10 +96,13 @@ public class Information extends AppCompatActivity {
         Caffe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Put data in TopFive Activity for top 5 caffe
-                Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
-                startActivity(Top_Screen);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
+                intent.putExtra("place","Caffe");  //the name of place
+                intent.putExtra("activity","TopFive"); //Put data in TopFive Activity for top 5 caffe
+                startActivity(intent);
+
             }
         });
 
@@ -82,10 +110,13 @@ public class Information extends AppCompatActivity {
         Restaurants.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Put data in TopFive Activity for top 5 restaurants
-                Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
-                startActivity(Top_Screen);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
+                intent.putExtra("place","Restaurants");  //the name of place
+                intent.putExtra("activity","TopFive"); //Put data in TopFive Activity for top 5 restaurants
+                startActivity(intent);
+
             }
         });
 
@@ -93,10 +124,13 @@ public class Information extends AppCompatActivity {
         Sights.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Put data in TopFive Activity for top 5 sights
-                Intent Top_Screen=new Intent(getApplicationContext(),TopFive.class);
 
-                startActivity(Top_Screen);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
+                intent.putExtra("place","Sights");  //the name of place
+                intent.putExtra("activity","TopFive"); //Put data in TopFive Activity for top 5 sights
+                startActivity(intent);
+
             }
         });
 
@@ -107,25 +141,38 @@ public class Information extends AppCompatActivity {
         General_Informations.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Put data in Display Activity
-                // Insert general information for the city who looking for
-                //and one famous photo
-                Intent Disp_Screen=new Intent(getApplicationContext(),Display.class);
-                startActivity(Disp_Screen);
+
+
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
+                intent.putExtra("place","General_Informations");  //the name of place
+                intent.putExtra("activity","Display"); //Put data in Display Activity
+                                                                  // Insert general information for the city who looking for
+                                                                  //and one famous photo
+                startActivity(intent);
+
+
+
             }
         });
 
 
         //Handle button Photos---------------------------------
 
-
         Photos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Put data in Photos Activity
-                // Insert the 12 famous photos for the city who looking for
-                Intent Photos_Screen=new Intent(getApplicationContext(),Photos.class);
-                startActivity(Photos_Screen);
+
+
+
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
+                intent.putExtra("place","Photos");  //the name of place
+                intent.putExtra("activity","Photos"); //Put data in Photos Activity
+                                                                 // Insert the 12 famous photos for the city who looking for
+                startActivity(intent);
+
+
             }
         });
     }
