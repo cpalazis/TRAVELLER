@@ -1,12 +1,12 @@
 package com.example.front_end;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,45 +41,59 @@ public class TownsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Ask informations for London
-                //Put data in Information Activity
-                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
-                startActivity(Info_Screen);
+
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city","London");
+                intent.putExtra("place","");
+                intent.putExtra("activity","Information");
+                startActivity(intent);
             }
         });
         buttonCityName.get(1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Ask informations for New York
-                //Put data in Information Activity
-                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
-                startActivity(Info_Screen);
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city","New York");
+                intent.putExtra("place","");
+                intent.putExtra("activity","Information");
+                startActivity(intent);
             }
         });
         buttonCityName.get(2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Ask informations for Paris
-                //Put data in Information Activity
-                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
-                startActivity(Info_Screen);
+
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city","Paris");
+                intent.putExtra("place","");
+                intent.putExtra("activity","Information");
+                startActivity(intent);
             }
         });
         buttonCityName.get(3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Ask informations for Rome
-                //Put data in Information Activity
-                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
-                startActivity(Info_Screen);
+
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city","Rome");
+                intent.putExtra("place","");
+                intent.putExtra("activity","Information");
+                startActivity(intent);
             }
         });
         buttonCityName.get(4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Ask informations for Tokyo
-                //Put data in Information Activity
-                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
-                startActivity(Info_Screen);
+
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("city","Tokio");
+                intent.putExtra("place","");
+                intent.putExtra("activity","Information");
+                startActivity(intent);
             }
         });
 
