@@ -45,8 +45,6 @@ public class CoffeeShop {
         this.vicinity = vicinity;
     }
 
-
-
     public double getLat() {
         return lat;
     }

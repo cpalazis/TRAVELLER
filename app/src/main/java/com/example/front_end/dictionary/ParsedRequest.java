@@ -1,31 +1,23 @@
 package com.example.front_end.dictionary;
 
 
+import java.util.ArrayList;
+
 public class ParsedRequest {
-    Words words;
-    WordType wordType;
+   private ArrayList<WordType> typeArrayList;
 
     public ParsedRequest() {
     }
 
-    public ParsedRequest(Words words, WordType wordType) {
-        this.words = words;
-        this.wordType = wordType;
+    public ParsedRequest(ArrayList<WordType> typeArrayList) {
+        this.typeArrayList = typeArrayList;
     }
 
-    public WordType getWordType() {
-        return wordType;
+    public ArrayList<WordType> getTypeArrayList() {
+        return typeArrayList;
     }
 
-    public void setWordType(WordType wordType) {
-        this.wordType = wordType;
-    }
-
-    public Words getWords() {
-        return words;
-    }
-
-    public void setWords(Words words) {
-        this.words = words;
+    public void setTypeArrayList(ArrayList<WordType> typeArrayList) {
+        this.typeArrayList = typeArrayList;
     }
 }
