@@ -1,8 +1,11 @@
 package com.example.front_end;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,6 +33,7 @@ public class Display extends AppCompatActivity {
         TextView infoTxt = findViewById(R.id.PlaceInfoTxtView);
         ImageView img = findViewById(R.id.imageViewP1);
         TextView descriptionTxt = findViewById(R.id.descriptionTextView);
+        Button map = findViewById(R.id.mapButton);
 
         //get index selection from TopFive activity, one from five
         Intent intent = getIntent();
@@ -104,8 +108,17 @@ public class Display extends AppCompatActivity {
         }
 
 
-        //create scroll
+        //DISPLAY MAP
         descriptionTxt.setMovementMethod(new ScrollingMovementMethod());
 
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),MapActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
 }
