@@ -9,6 +9,8 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.front_end.objects.CoffeeShop;
+import com.example.front_end.objects.Sight;
 import com.example.front_end.utilities.UtilityClass;
 import com.squareup.picasso.Picasso;
 
@@ -44,35 +46,53 @@ public class TopFive extends AppCompatActivity {
         ImageView img4 = findViewById(R.id.image4);
         ImageView img5 = findViewById(R.id.image5);
 
-        ArrayList<String> places = new ArrayList<>();
-        places= UtilityClass.getInstance().getList();
+        ArrayList<Museum> museum = UtilityClass.getInstance().getMuseumList();
+        ArrayList<Hotel> hotel = UtilityClass.getInstance().getHotelList();
+        ArrayList<Bank> bank = UtilityClass.getInstance().getBankList();
+        ArrayList<CoffeeShop> caffe = UtilityClass.getInstance().getCoffeeShopList();
+        ArrayList<Restaurant> restaurant = UtilityClass.getInstance().getRestaurantList();
+        ArrayList<Sight> sight = UtilityClass.getInstance().getSightList();
 
-        if (places != null){
-            buttonPlaceName.get(0).setText(places.get(1)); //index 0 = city name
-            buttonPlaceName.get(1).setText(places.get(2));
-            buttonPlaceName.get(2).setText(places.get(3));
-            buttonPlaceName.get(3).setText(places.get(4));
-            buttonPlaceName.get(4).setText(places.get(5));
-
-            Picasso.with(this).load(places.get(6)).resize(600,300).into(img1); //index 6 until 10 = image url
-            Picasso.with(this).load(places.get(7)).resize(600,300).into(img2);
-            Picasso.with(this).load(places.get(8)).resize(600,300).into(img3);
-            Picasso.with(this).load(places.get(9)).resize(600,300).into(img4);
-            Picasso.with(this).load(places.get(10)).resize(600,300).into(img5);
-
+       if(museum != null){
+            ArrayList<Museum> places = UtilityClass.getInstance().getMuseumList();
         }
+        else if (hotel != null){
+            ArrayList<Hotel> places = UtilityClass.getInstance().getHotelList();
+        }
+        else if (bank != null){
+            ArrayList<Bank> places = UtilityClass.getInstance().getBankList();
+        }
+        else if (caffe != null){
+           ArrayList<CoffeeShop> places = UtilityClass.getInstance().getCoffeeShopList();
+       }
+        else if (restaurant !=null){
+           ArrayList<Restaurant> places = UtilityClass.getInstance().getRestaurantList();
+       }
+        else if (sight !=null){
+           ArrayList<Sight> places = UtilityClass.getInstance().getSightList();
+       }
 
 
-        ArrayList<String> finalPlaces = places;
+        buttonPlaceName.get(0).setText(places.get(0).getName());
+        buttonPlaceName.get(1).setText(places.get(1).getName());
+        buttonPlaceName.get(2).setText(places.get(2).getName());
+        buttonPlaceName.get(3).setText(places.get(3).getName());
+        buttonPlaceName.get(4).setText(places.get(4).getName());
+
+        Picasso.with(this).load(places.get(0).getImages().get(0)).resize(600,300).into(img1);
+        Picasso.with(this).load(places.get(1).getImages().get(0)).resize(600,300).into(img2);
+        Picasso.with(this).load(places.get(2).getImages().get(0)).resize(600,300).into(img3);
+        Picasso.with(this).load(places.get(3).getImages().get(0)).resize(600,300).into(img4);
+        Picasso.with(this).load(places.get(4).getImages().get(0)).resize(600,300).into(img5);
+
+
+
+
         buttonPlaceName.get(0).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city", finalPlaces.get(0)); //the name of city
-                intent.putExtra("place",buttonPlaceName.get(0).getText().toString());  //the name of place
-                intent.putExtra("activity","Display"); //Put data in Display Activity for 1st place
+                Intent intent=new Intent(getApplicationContext(),Display.class);
+                intent.putExtra("index", "0");
                 startActivity(intent);
             }
         });
@@ -81,11 +101,8 @@ public class TopFive extends AppCompatActivity {
         buttonPlaceName.get(1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city", finalPlaces.get(0)); //the name of city
-                intent.putExtra("place",buttonPlaceName.get(1).getText().toString());  //the name of place
-                intent.putExtra("activity","Display"); //Put data in Display Activity for 2nd place
+                Intent intent=new Intent(getApplicationContext(),Display.class);
+                intent.putExtra("index", "1");
                 startActivity(intent);
             }
         });
@@ -94,11 +111,8 @@ public class TopFive extends AppCompatActivity {
         buttonPlaceName.get(2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city", finalPlaces.get(0)); //the name of city
-                intent.putExtra("place",buttonPlaceName.get(2).getText().toString());  //the name of place
-                intent.putExtra("activity","Display"); //Put data in Display Activity for 3rd place
+                Intent intent=new Intent(getApplicationContext(),Display.class);
+                intent.putExtra("index", "2");
                 startActivity(intent);
             }
         });
@@ -107,11 +121,8 @@ public class TopFive extends AppCompatActivity {
         buttonPlaceName.get(3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city", finalPlaces.get(0)); //the name of city
-                intent.putExtra("place",buttonPlaceName.get(3).getText().toString());  //the name of place
-                intent.putExtra("activity","Display"); //Put data in Display Activity for 4th place
+                Intent intent=new Intent(getApplicationContext(),Display.class);
+                intent.putExtra("index", "3");
                 startActivity(intent);
             }
         });
@@ -120,11 +131,8 @@ public class TopFive extends AppCompatActivity {
         buttonPlaceName.get(4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city", finalPlaces.get(0)); //the name of city
-                intent.putExtra("place",buttonPlaceName.get(4).getText().toString());  //the name of place
-                intent.putExtra("activity","Display"); //Put data in Display Activity for 5th place
+                Intent intent=new Intent(getApplicationContext(),Display.class);
+                intent.putExtra("index", "4");
                 startActivity(intent);
             }
         });

@@ -8,9 +8,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.front_end.dictionary.Words;
+import com.example.front_end.objects.Town;
 import com.example.front_end.utilities.UtilityClass;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Information extends AppCompatActivity {
 
@@ -40,26 +43,37 @@ public class Information extends AppCompatActivity {
         //TextView infoTxt shows the name of the city
         TextView infoTxt = findViewById(R.id.textView);
 
+        ArrayList<Town> town = UtilityClass.getInstance().getTownList();
+        String cityName="";
 
-        ArrayList<String> cities = new ArrayList<>();
-        cities= UtilityClass.getInstance().getList();
 
-        if (cities != null){
-            infoTxt.setText(cities.get(0));
+        if (town != null){
+            infoTxt.setText(town.get(0).getName());
+            cityName=town.get(0).getName();
         }
 
 
 
         //Handle button Museums---------------------------------
+        String finalCityName = cityName;
         Museums.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("museums",Words.SENDARRAYMUSEUM);
+                map.put(finalCityName,Words.TOWN);
+                map.put("TopFive",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
                 Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
-                intent.putExtra("place","Museums");  //the name of place
-                intent.putExtra("activity","TopFive"); //Put data in TopFive Activity for top 5 museums
                 startActivity(intent);
+
+
+                //Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                //intent.putExtra("city",infoTxt.getText().toString()); //the name of city
+                //intent.putExtra("place","Museums");  //the name of place
+                //intent.putExtra("activity","TopFive"); //Put data in TopFive Activity for top 5 museums
+                //startActivity(intent);
 
             }
         });
@@ -69,10 +83,12 @@ public class Information extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("hotels",Words.SENDARRAYHOTEL);
+                map.put(finalCityName,Words.TOWN);
+                map.put("TopFive",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
                 Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
-                intent.putExtra("place","Hotels");  //the name of place
-                intent.putExtra("activity","TopFive");  //Put data in TopFive Activity for top 5 hotels
                 startActivity(intent);
 
             }
@@ -83,10 +99,12 @@ public class Information extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("banks",Words.SENDARRAYBANK);
+                map.put(finalCityName,Words.TOWN);
+                map.put("TopFive",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
                 Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
-                intent.putExtra("place","Banks");  //the name of place
-                intent.putExtra("activity","TopFive");    //Put data in TopFive Activity for top 5 banks
                 startActivity(intent);
 
             }
@@ -97,10 +115,12 @@ public class Information extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("caffe",Words.SENDCOFFEESHOP);
+                map.put(finalCityName,Words.TOWN);
+                map.put("TopFive",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
                 Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
-                intent.putExtra("place","Caffe");  //the name of place
-                intent.putExtra("activity","TopFive"); //Put data in TopFive Activity for top 5 caffe
                 startActivity(intent);
 
             }
@@ -111,10 +131,12 @@ public class Information extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("restaurants",Words.SENDARRAYRESTAURANT);
+                map.put(finalCityName,Words.TOWN);
+                map.put("TopFive",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
                 Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
-                intent.putExtra("place","Restaurants");  //the name of place
-                intent.putExtra("activity","TopFive"); //Put data in TopFive Activity for top 5 restaurants
                 startActivity(intent);
 
             }
@@ -125,10 +147,12 @@ public class Information extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("sights",Words.SENDARRAYSIGHT);
+                map.put(finalCityName,Words.TOWN);
+                map.put("TopFive",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
                 Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
-                intent.putExtra("place","Sights");  //the name of place
-                intent.putExtra("activity","TopFive"); //Put data in TopFive Activity for top 5 sights
                 startActivity(intent);
 
             }
@@ -136,43 +160,23 @@ public class Information extends AppCompatActivity {
 
 
         //Handle button General_Informations---------------------------------
-
-
         General_Informations.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
-                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
-                intent.putExtra("place","General_Informations");  //the name of place
-                intent.putExtra("activity","Display"); //Put data in Display Activity
-                                                                  // Insert general information for the city who looking for
-                                                                  //and one famous photo
+                Intent intent=new Intent(getApplicationContext(),Display.class);
                 startActivity(intent);
-
-
-
             }
         });
 
 
         //Handle button Photos---------------------------------
-
         Photos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
-
-                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city",infoTxt.getText().toString()); //the name of city
-                intent.putExtra("place","Photos");  //the name of place
-                intent.putExtra("activity","Photos"); //Put data in Photos Activity
-                                                                 // Insert the 12 famous photos for the city who looking for
+                Intent intent=new Intent(getApplicationContext(),Photos.class);
                 startActivity(intent);
-
-
             }
         });
     }
