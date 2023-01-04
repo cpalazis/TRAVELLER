@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.front_end.objects.Town;
 import com.example.front_end.utilities.UtilityClass;
 import com.squareup.picasso.Picasso;
 
@@ -69,26 +70,25 @@ public class Photos extends AppCompatActivity {
         ImageButton imgButton11 = findViewById(R.id.imageButton11);
         ImageButton imgButton12 = findViewById(R.id.imageButton12);
 
-        ArrayList<String> cityPhotos = new ArrayList<>();
-        cityPhotos= UtilityClass.getInstance().getList();
+        ArrayList<Town> town = UtilityClass.getInstance().getTownList();
 
-        if ( cityPhotos != null){
+        if ( town != null){
 
-            CityName.setText("City name: "+ cityPhotos.get(0)); //index 0 = city name
+            CityName.setText("Photos of "+ town.get(0).getName()); //index 0 = city name
 
             //Put urls for city photos
-            url1 = cityPhotos.get(1); // index 1 until 12 = 12 photos of the city
-            url2 = cityPhotos.get(2);
-            url3 = cityPhotos.get(3);
-            url4 = cityPhotos.get(4);
-            url5 = cityPhotos.get(5);
-            url6 = cityPhotos.get(6);
-            url7 = cityPhotos.get(7);
-            url8 = cityPhotos.get(8);
-            url9 = cityPhotos.get(9);
-            url10 = cityPhotos.get(10);
-            url11 = cityPhotos.get(11);
-            url12 = cityPhotos.get(12);
+            url1 = town.get(0).getImages().get(0); // take 12 photos of the city
+            url2 = town.get(0).getImages().get(1);
+            url3 = town.get(0).getImages().get(2);
+            url4 = town.get(0).getImages().get(3);
+            url5 = town.get(0).getImages().get(4);
+            url6 = town.get(0).getImages().get(5);
+            url7 = town.get(0).getImages().get(6);
+            url8 = town.get(0).getImages().get(7);
+            url9 = town.get(0).getImages().get(8);
+            url10 = town.get(0).getImages().get(9);
+            url11 = town.get(0).getImages().get(10);
+            url12 = town.get(0).getImages().get(11);
 
 
         }

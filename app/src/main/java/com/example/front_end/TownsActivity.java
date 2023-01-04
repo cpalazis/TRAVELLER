@@ -8,7 +8,11 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.front_end.dictionary.Words;
+import com.example.front_end.utilities.UtilityClass;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -42,22 +46,32 @@ public class TownsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Ask informations for London
 
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city","London");
-                intent.putExtra("place","");
-                intent.putExtra("activity","Information");
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("London",Words.TOWN);
+                map.put("Information",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
+
+                //Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                //intent.putExtra("city","London");
+                //intent.putExtra("place","");
+                //intent.putExtra("activity","Information");
+                //startActivity(intent);
             }
         });
         buttonCityName.get(1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Ask informations for New York
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city","New York");
-                intent.putExtra("place","");
-                intent.putExtra("activity","Information");
+
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("New York",Words.TOWN);
+                map.put("Information",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
+
             }
         });
         buttonCityName.get(2).setOnClickListener(new View.OnClickListener() {
@@ -65,23 +79,27 @@ public class TownsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Ask informations for Paris
 
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city","Paris");
-                intent.putExtra("place","");
-                intent.putExtra("activity","Information");
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("Paris",Words.TOWN);
+                map.put("Information",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
-            }
+
+                }
         });
         buttonCityName.get(3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Ask informations for Rome
 
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city","Rome");
-                intent.putExtra("place","");
-                intent.putExtra("activity","Information");
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("Rome",Words.TOWN);
+                map.put("Information",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
+
             }
         });
         buttonCityName.get(4).setOnClickListener(new View.OnClickListener() {
@@ -89,11 +107,13 @@ public class TownsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Ask informations for Tokyo
 
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("city","Tokio");
-                intent.putExtra("place","");
-                intent.putExtra("activity","Information");
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("Tokyo",Words.TOWN);
+                map.put("Information",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
+
             }
         });
 
