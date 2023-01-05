@@ -54,25 +54,98 @@ public class TopFive extends AppCompatActivity {
         ArrayList<Sight> sight = UtilityClass.getInstance().getSightList();
 
        if(museum != null){
-            ArrayList<Museum> places = UtilityClass.getInstance().getMuseumList();
-        }
+            //ArrayList<Museum> places = UtilityClass.getInstance().getMuseumList();
+
+           buttonPlaceName.get(0).setText(museum.get(0).getName());
+           buttonPlaceName.get(1).setText(museum.get(1).getName());
+           buttonPlaceName.get(2).setText(museum.get(2).getName());
+           buttonPlaceName.get(3).setText(museum.get(3).getName());
+           buttonPlaceName.get(4).setText(museum.get(4).getName());
+
+           Picasso.with(this).load(museum.get(0).getImages().get(0)).resize(600,300).into(img1);
+           Picasso.with(this).load(museum.get(1).getImages().get(0)).resize(600,300).into(img2);
+           Picasso.with(this).load(museum.get(2).getImages().get(0)).resize(600,300).into(img3);
+           Picasso.with(this).load(museum.get(3).getImages().get(0)).resize(600,300).into(img4);
+           Picasso.with(this).load(museum.get(4).getImages().get(0)).resize(600,300).into(img5);
+       }
         else if (hotel != null){
-            ArrayList<Hotel> places = UtilityClass.getInstance().getHotelList();
-        }
+            //ArrayList<Hotel> places = UtilityClass.getInstance().getHotelList();
+
+           buttonPlaceName.get(0).setText(hotel.get(0).getName());
+           buttonPlaceName.get(1).setText(hotel.get(1).getName());
+           buttonPlaceName.get(2).setText(hotel.get(2).getName());
+           buttonPlaceName.get(3).setText(hotel.get(3).getName());
+           buttonPlaceName.get(4).setText(hotel.get(4).getName());
+
+           Picasso.with(this).load(hotel.get(0).getImages().get(0)).resize(600,300).into(img1);
+           Picasso.with(this).load(hotel.get(1).getImages().get(0)).resize(600,300).into(img2);
+           Picasso.with(this).load(hotel.get(2).getImages().get(0)).resize(600,300).into(img3);
+           Picasso.with(this).load(hotel.get(3).getImages().get(0)).resize(600,300).into(img4);
+           Picasso.with(this).load(hotel.get(4).getImages().get(0)).resize(600,300).into(img5);
+       }
         else if (bank != null){
-            ArrayList<Bank> places = UtilityClass.getInstance().getBankList();
-        }
+            //ArrayList<Bank> places = UtilityClass.getInstance().getBankList();
+
+           buttonPlaceName.get(0).setText(bank.get(0).getName());
+           buttonPlaceName.get(1).setText(bank.get(1).getName());
+           buttonPlaceName.get(2).setText(bank.get(2).getName());
+           buttonPlaceName.get(3).setText(bank.get(3).getName());
+           buttonPlaceName.get(4).setText(bank.get(4).getName());
+
+           Picasso.with(this).load(bank.get(0).getImages().get(0)).resize(600,300).into(img1);
+           Picasso.with(this).load(bank.get(1).getImages().get(0)).resize(600,300).into(img2);
+           Picasso.with(this).load(bank.get(2).getImages().get(0)).resize(600,300).into(img3);
+           Picasso.with(this).load(bank.get(3).getImages().get(0)).resize(600,300).into(img4);
+           Picasso.with(this).load(bank.get(4).getImages().get(0)).resize(600,300).into(img5);
+       }
         else if (caffe != null){
-           ArrayList<CoffeeShop> places = UtilityClass.getInstance().getCoffeeShopList();
+           //ArrayList<CoffeeShop> places = UtilityClass.getInstance().getCoffeeShopList();
+
+           buttonPlaceName.get(0).setText(caffe.get(0).getName());
+           buttonPlaceName.get(1).setText(caffe.get(1).getName());
+           buttonPlaceName.get(2).setText(caffe.get(2).getName());
+           buttonPlaceName.get(3).setText(caffe.get(3).getName());
+           buttonPlaceName.get(4).setText(caffe.get(4).getName());
+
+           Picasso.with(this).load(caffe.get(0).getImages().get(0)).resize(600,300).into(img1);
+           Picasso.with(this).load(caffe.get(1).getImages().get(0)).resize(600,300).into(img2);
+           Picasso.with(this).load(caffe.get(2).getImages().get(0)).resize(600,300).into(img3);
+           Picasso.with(this).load(caffe.get(3).getImages().get(0)).resize(600,300).into(img4);
+           Picasso.with(this).load(caffe.get(4).getImages().get(0)).resize(600,300).into(img5);
        }
         else if (restaurant !=null){
-           ArrayList<Restaurant> places = UtilityClass.getInstance().getRestaurantList();
+           //ArrayList<Restaurant> places = UtilityClass.getInstance().getRestaurantList();
+
+           buttonPlaceName.get(0).setText(restaurant.get(0).getName());
+           buttonPlaceName.get(1).setText(restaurant.get(1).getName());
+           buttonPlaceName.get(2).setText(restaurant.get(2).getName());
+           buttonPlaceName.get(3).setText(restaurant.get(3).getName());
+           buttonPlaceName.get(4).setText(restaurant.get(4).getName());
+
+           Picasso.with(this).load(restaurant.get(0).getImages().get(0)).resize(600,300).into(img1);
+           Picasso.with(this).load(restaurant.get(1).getImages().get(0)).resize(600,300).into(img2);
+           Picasso.with(this).load(restaurant.get(2).getImages().get(0)).resize(600,300).into(img3);
+           Picasso.with(this).load(restaurant.get(3).getImages().get(0)).resize(600,300).into(img4);
+           Picasso.with(this).load(restaurant.get(4).getImages().get(0)).resize(600,300).into(img5);
+
        }
         else if (sight !=null){
-           ArrayList<Sight> places = UtilityClass.getInstance().getSightList();
+           //ArrayList<Sight> places = UtilityClass.getInstance().getSightList();
+
+           buttonPlaceName.get(0).setText(sight.get(0).getName());
+           buttonPlaceName.get(1).setText(sight.get(1).getName());
+           buttonPlaceName.get(2).setText(sight.get(2).getName());
+           buttonPlaceName.get(3).setText(sight.get(3).getName());
+           buttonPlaceName.get(4).setText(sight.get(4).getName());
+
+           Picasso.with(this).load(sight.get(0).getImages().get(0)).resize(600,300).into(img1);
+           Picasso.with(this).load(sight.get(1).getImages().get(0)).resize(600,300).into(img2);
+           Picasso.with(this).load(sight.get(2).getImages().get(0)).resize(600,300).into(img3);
+           Picasso.with(this).load(sight.get(3).getImages().get(0)).resize(600,300).into(img4);
+           Picasso.with(this).load(sight.get(4).getImages().get(0)).resize(600,300).into(img5);
        }
 
-
+/*
         buttonPlaceName.get(0).setText(places.get(0).getName());
         buttonPlaceName.get(1).setText(places.get(1).getName());
         buttonPlaceName.get(2).setText(places.get(2).getName());
@@ -84,7 +157,7 @@ public class TopFive extends AppCompatActivity {
         Picasso.with(this).load(places.get(2).getImages().get(0)).resize(600,300).into(img3);
         Picasso.with(this).load(places.get(3).getImages().get(0)).resize(600,300).into(img4);
         Picasso.with(this).load(places.get(4).getImages().get(0)).resize(600,300).into(img5);
-
+*/
 
 
 
