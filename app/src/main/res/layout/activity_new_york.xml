@@ -21,18 +21,64 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
+    <ImageView
+        android:id="@+id/separator4"
+        android:layout_width="401dp"
+        android:layout_height="82dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newYorkHeader"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/separator__2_" />
+
     <TextView
         android:id="@+id/newYorkText"
         android:layout_width="344dp"
         android:layout_height="wrap_content"
         android:autoText="false"
-        android:text="New York, often called New York City (NYC), is the largest city by population in the United States. It is at the southern end of the state of New York. New York's population is similar to Chicago in Illinois with over 8 million people currently living in it, and over 22 million people live in the bigger New York metropolitan area. It is the financial capital of the U.S. since it is home to the nation's stock market, Wall Street, and the One World Trade Center.  Many districts and landmarks in New York City are well known, including three of the world's ten most visited tourist places in 2013. A record 62.8 million tourists came to New York City in 2017. Times Square is the colorful area of the Broadway Theater District, one of the world's busiest pedestrian intersections, and a famous area for the world's entertainment industry.Many of the city's landmarks, skyscrapers,and parks are known around the world. Manhattan's real estate market is one of the most expensive in the world. New York has more Chinese people outside of China than anywhere in the world, with many Chinatowns across the city. The New York City Subway is the biggest single-operator rapid transit system worldwide, with 472 rail stations. The city has over 120 colleges and universities, including Columbia University, New York University, Rockefeller University, and the City University of New York system, which is the biggest urban public university system in the United States.The world's two largest stock exchanges, the New York Stock Exchange, located on Wall Street in the Financial District of Lower Manhattan, and NASDAQ, headquartered in Midtown Manhattan, are both in Manhattan. "
+        android:text="New York, often called New York City (NYC), is the largest city by population in the United States.  It is at the southern end of the state of New York.  New York's population is similar to Chicago in Illinois with over 8 million people currently living in it, and over 22 million people live in the bigger New York metropolitan area.  It is the financial capital of the U.S. since it is home to the nation's stock market, Wall Street, and the One World Trade Center.   Many districts and landmarks in New York City are well known, including three of the world's ten most visited tourist places in 2013.  A record 62.8 million tourists came to New York City in 2017. "
         android:textAlignment="textStart"
         android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newYorkHeader" />
+        app:layout_constraintTop_toBottomOf="@+id/newYorkHeader"
+        app:layout_constraintVertical_bias="0.161" />
+
+    <TextView
+        android:id="@+id/newYorkText2"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:autoText="false"
+        android:text=" Times Square is the colorful area of the Broadway Theater District, one of the world's busiest pedestrian intersections, and a famous area for the world's entertainment industry.  Many of the city's landmarks, skyscrapers,and parks are known around the world.  Manhattan's real estate market is one of the most expensive in the world.  New York has more Chinese people outside of China than anywhere in the world, with many Chinatowns across the city.  The New York City Subway is the biggest single-operator rapid transit system worldwide, with 472 rail stations."
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newYorkHeader"
+        app:layout_constraintVertical_bias="0.606" />
+
+    <TextView
+        android:id="@+id/newYorkText3"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        android:autoText="false"
+        android:text=" The city has over 120 colleges and universities, including Columbia University, New York University, Rockefeller University, and the City University of New York system, which is the biggest urban public university system in the United States.The world's two largest stock exchanges, the New York Stock Exchange, located on Wall Street in the Financial District of Lower Manhattan, and NASDAQ, headquartered in Midtown Manhattan, are both in Manhattan. "
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newYorkHeader"
+        app:layout_constraintVertical_bias="0.968" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
