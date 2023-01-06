@@ -13,6 +13,7 @@ import java.util.List;
 
 
 public class TownsActivity extends AppCompatActivity {
+
     private List<Button> buttonCityName = new ArrayList<>();
 
     public TownsActivity() {
@@ -28,9 +29,13 @@ public class TownsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         buttonCityName.add(findViewById(R.id.buttonLondon));
+
         buttonCityName.add(findViewById(R.id.buttonNewYork));
+
         buttonCityName.add(findViewById(R.id.buttonParis));
+
         buttonCityName.add(findViewById(R.id.buttonRome));
+
         buttonCityName.add(findViewById(R.id.buttonTokyo));
 
         buttonCityName.get(0).setOnClickListener(new View.OnClickListener() {
@@ -40,6 +45,7 @@ public class TownsActivity extends AppCompatActivity {
                 startActivity(london);
             }
         });
+
         buttonCityName.get(1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,6 +53,7 @@ public class TownsActivity extends AppCompatActivity {
                 startActivity(newYork);
             }
         });
+
         buttonCityName.get(2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +61,7 @@ public class TownsActivity extends AppCompatActivity {
                 startActivity(paris);
             }
         });
+
         buttonCityName.get(3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +69,7 @@ public class TownsActivity extends AppCompatActivity {
                 startActivity(rome);
             }
         });
+
         buttonCityName.get(4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
