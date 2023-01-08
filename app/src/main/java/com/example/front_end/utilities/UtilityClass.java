@@ -2,7 +2,6 @@ package com.example.front_end.utilities;
 
 import com.example.front_end.dictionary.Words;
 import com.example.front_end.objects.*;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -12,9 +11,15 @@ public class UtilityClass {
     private ArrayList<Sight> sightList;
     private ArrayList<CoffeeShop> coffeeShopList;
     private ArrayList<Hospital> hospitalList;
+    private ArrayList<Museum> museums;
+    private ArrayList<Bank> banks;
+    private ArrayList<Hotel> hotels;
+    private ArrayList<Restaurant> restaurants;
     private ArrayList<Double> location;
     private ArrayList<String> imagesUrl;
+    private ArrayList<Foo> fools;
     private HashMap<String, Words> mapList;
+
 
     private UtilityClass(){}
 
@@ -79,5 +84,45 @@ public class UtilityClass {
 
     public void setImagesUrl(ArrayList<String> imagesUrl) {
         this.imagesUrl = imagesUrl;
+    }
+
+    public ArrayList<Foo> getFools() {
+        return fools;
+    }
+
+    public void setFools(ArrayList<Foo> fools) {
+        this.fools = fools;
+    }
+
+    public ArrayList<Museum> getMuseums() {
+        return museums;
+    }
+
+    public void setMuseums(ArrayList<Museum> museums) {
+        this.museums = museums;
+    }
+
+    public ArrayList<Bank> getBanks() {
+        return banks;
+    }
+
+    public void setBanks(ArrayList<Bank> banks) {
+        this.banks = banks;
+    }
+
+    public ArrayList<Hotel> getHotels() {
+        return hotels;
+    }
+
+    public void setHotels(ArrayList<Hotel> hotels) {
+        this.hotels = hotels;
+    }
+
+    public ArrayList<Restaurant> getRestaurants() {
+        return restaurants;
+    }
+
+    public void setRestaurants(ArrayList<Restaurant> restaurants) {
+        this.restaurants = restaurants;
     }
 }

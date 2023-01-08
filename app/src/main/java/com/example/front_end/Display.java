@@ -1,12 +1,12 @@
 package com.example.front_end;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
-import android.widget.TextView;
-import android.content.Intent;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.squareup.picasso.Picasso;
 
 public class Display extends AppCompatActivity {

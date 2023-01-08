@@ -1,10 +1,12 @@
-package com.example.front_end.dictionary;
+package com.example.front_end.utilities;
 
+
+import com.example.front_end.dictionary.WordType;
 
 import java.util.ArrayList;
 
 public class ParsedRequest {
-   private ArrayList<WordType> typeArrayList;
+    private ArrayList<WordType> typeArrayList;
 
     public ParsedRequest() {
     }
@@ -20,4 +22,6 @@ public class ParsedRequest {
     public void setTypeArrayList(ArrayList<WordType> typeArrayList) {
         this.typeArrayList = typeArrayList;
     }
+
+
 }
