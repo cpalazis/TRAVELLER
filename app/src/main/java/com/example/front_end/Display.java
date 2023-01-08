@@ -1,13 +1,21 @@
 package com.example.front_end;
 
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.front_end.objects.CoffeeShop;
+import com.example.front_end.objects.Sight;
+import com.example.front_end.objects.Town;
+import com.example.front_end.utilities.UtilityClass;
 import com.squareup.picasso.Picasso;
+import java.util.ArrayList;
 
 public class Display extends AppCompatActivity {
 
@@ -19,41 +27,96 @@ public class Display extends AppCompatActivity {
         //start the code from here
         setTitle("Display Activity");
 
-        //create the get Intent object
-        //Intent intent = getIntent();
-
-        //receive the value by getStringExtra() method and
-        //key must be same which is send by first activity
-        //String str = intent.getStringExtra("message_key"); //receive string
-        //Place place = (Place) intent.getSerializableExtra("sampleObject"); //receive object
-
 
         TextView infoTxt = findViewById(R.id.PlaceInfoTxtView);
         ImageView img = findViewById(R.id.imageViewP1);
         TextView descriptionTxt = findViewById(R.id.descriptionTextView);
+        Button map = findViewById(R.id.mapButton);
 
-        //---------------------------START DATA FOR TESTING----------------------------------
-        String str = "name of place" + " ******";
-        String url = "https://upload.wikimedia.org/wikipedia/commons/4/49/Corfu_Vlacherna_R01.jpg";
-        String textInfo = "xxxxxxxx"+"yyyyyyyy"+"********"+"ooooooooo";
-
-        //display the name of place into TextView
-        infoTxt.setText("Informations for place: "+str);
-
-        //infoTxt.setText("Informations for place: "+place.getNameP());
-        // OR display the string into TextView from object
-
-        //Show the Place image
-        Picasso.with(this).load(url).resize(600,300).into(img);
-        //Picasso.get().load(url).resize(600,300).into(img);
+        //get index selection from TopFive activity, one from five
+        Intent intent = getIntent();
+        String index= intent.getStringExtra("index");
+        int idx= Integer.parseInt(index);  //convert string to int
 
 
-        //Show the Place description
-        descriptionTxt.setText(textInfo);
-        //create scroll
+        ArrayList<Town> town = UtilityClass.getInstance().getTownList();
+        ArrayList<Museum> museum = UtilityClass.getInstance().getMuseumList();
+        ArrayList<Hotel> hotel = UtilityClass.getInstance().getHotelList();
+        ArrayList<Bank> bank = UtilityClass.getInstance().getBankList();
+        ArrayList<CoffeeShop> caffe = UtilityClass.getInstance().getCoffeeShopList();
+        ArrayList<Restaurant> restaurant = UtilityClass.getInstance().getRestaurantList();
+        ArrayList<Sight> sight = UtilityClass.getInstance().getSightList();
+
+        //Display for City
+        if (town != null){
+            infoTxt.setText("Informations for City: " + town.get(0).getName()); //name city
+            Picasso.with(this).load(town.get(0).getImages().get(0)).resize(600,300).into(img); //city image url
+            descriptionTxt.setText(town.get(0).getExcerpt()); // description of the city
+
+        }
+
+        //Display for Museums
+        else if (museum != null){
+            infoTxt.setText("Informations for Museum: " + museum.get(idx).getName()); //name museum
+            Picasso.with(this).load(museum.get(idx).getImages().get(0)).resize(600,300).into(img); //museum image url
+            descriptionTxt.setText(museum.get(idx).getExcerpt()); // description of the museum
+
+        }
+
+        //Display for Hotels
+        else if (hotel != null){
+            infoTxt.setText("Informations for Hotel: " + hotel.get(idx).getName()); //hotel city
+            Picasso.with(this).load(hotel.get(idx).getImages().get(0)).resize(600,300).into(img); //hotel image url
+            descriptionTxt.setText(hotel.get(idx).getExcerpt()); // description of the hotel
+
+        }
+
+        //Display for Banks
+        else if (bank != null){
+            infoTxt.setText("Informations for Bank: " + bank.get(idx).getName()); //name bank
+            Picasso.with(this).load(bank.get(idx).getImages().get(0)).resize(600,300).into(img); //bank image url
+            descriptionTxt.setText(bank.get(idx).getExcerpt()); // description of the bank
+
+        }
+
+        //Display for Caffe
+        else if (caffe != null){
+            infoTxt.setText("Informations for Caffe: " + caffe.get(idx).getName()); //name caffe
+            Picasso.with(this).load(caffe.get(idx).getImages().get(0)).resize(600,300).into(img); //caffe image url
+            descriptionTxt.setText(town.get(idx).getExcerpt()); // description of the caffe
+
+        }
+
+        //Display for Restaurants
+        else if (restaurant != null){
+            infoTxt.setText("Informations for Restaurant: " + restaurant.get(idx).getName()); //name restaurant
+            Picasso.with(this).load(restaurant.get(idx).getImages().get(0)).resize(600,300).into(img); //restaurant image url
+            descriptionTxt.setText(restaurant.get(idx).getExcerpt()); // description of the restaurant
+
+        }
+
+        //Display for Sights
+
+
+        else if (sight != null){
+            infoTxt.setText("Informations for Sight: " + sight.get(idx).getName()); //name sight
+            Picasso.with(this).load(sight.get(idx).getImages().get(0)).resize(600,300).into(img); //sight image url
+            descriptionTxt.setText(sight.get(idx).getExcerpt()); // description of the sight
+
+        }
+
+
+        //DISPLAY MAP
         descriptionTxt.setMovementMethod(new ScrollingMovementMethod());
 
-
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),MapActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
+
 }

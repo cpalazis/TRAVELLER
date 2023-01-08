@@ -1,14 +1,18 @@
 package com.example.front_end;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.front_end.dictionary.Words;
+import com.example.front_end.utilities.UtilityClass;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -41,45 +45,75 @@ public class TownsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Ask informations for London
-                //Put data in Information Activity
-                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
-                startActivity(Info_Screen);
+
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("London",Words.TOWN);
+                map.put("Information",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+
+                //Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                //intent.putExtra("city","London");
+                //intent.putExtra("place","");
+                //intent.putExtra("activity","Information");
+                //startActivity(intent);
             }
         });
         buttonCityName.get(1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Ask informations for New York
-                //Put data in Information Activity
-                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
-                startActivity(Info_Screen);
+
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("New York",Words.TOWN);
+                map.put("Information",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+
             }
         });
         buttonCityName.get(2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Ask informations for Paris
-                //Put data in Information Activity
-                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
-                startActivity(Info_Screen);
-            }
+
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("Paris",Words.TOWN);
+                map.put("Information",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+
+                }
         });
         buttonCityName.get(3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Ask informations for Rome
-                //Put data in Information Activity
-                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
-                startActivity(Info_Screen);
+
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("Rome",Words.TOWN);
+                map.put("Information",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+
             }
         });
         buttonCityName.get(4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Ask informations for Tokyo
-                //Put data in Information Activity
-                Intent Info_Screen = new Intent(getApplicationContext(),Information.class);
-                startActivity(Info_Screen);
+
+                HashMap<String, Words> map = new HashMap<>();
+                map.put("Tokyo",Words.TOWN);
+                map.put("Information",Words.ACTIVITY);
+                UtilityClass.getInstance().setMapList(map);
+                Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+
             }
         });
 
