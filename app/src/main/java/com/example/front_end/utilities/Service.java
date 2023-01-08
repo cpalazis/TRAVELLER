@@ -8,7 +8,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Service {
-    final static String url = "http://localhost:3000";
+    //final static String url = "http://localhost:3000";
+    final static String url = "https://mocki.io/v1/";
 
     public interface VolleyResponseListener {
         void onResponse(JSONObject jsonObject);
@@ -18,7 +19,7 @@ public class Service {
 
     public void getJSONObject(Context context, String addUrl, VolleyResponseListener volleyResponseListener){
         String Url = connectUrl(url, addUrl);
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, Url, null, response -> {
             volleyResponseListener.onResponse(response);
         }, error -> {volleyResponseListener.onError(addUrl+" not found");});
 
@@ -28,7 +29,7 @@ public class Service {
     public void getJSONArray(Context context, String addUrl, VolleyResponseListener volleyResponseListener){
         String Url = connectUrl(url, addUrl);
 
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, response -> {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, Url, null, response -> {
             volleyResponseListener.onResponse(response);
         }, error -> {volleyResponseListener.onError("There is no response!!!");});
 

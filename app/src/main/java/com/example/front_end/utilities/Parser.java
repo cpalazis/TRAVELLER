@@ -2,7 +2,7 @@ package com.example.front_end.utilities;
 
 import com.example.front_end.dictionary.WordType;
 import com.example.front_end.dictionary.Words;
-import com.example.front_end.dictionary.ParsedRequest;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,12 +11,13 @@ import java.util.Map;
 public class Parser {
 
 
-    public ParsedRequest runParser(HashMap<String, Words> map) {
-        ArrayList<WordType> arrayList = new ArrayList<>();
-        return new ParsedRequest(setTheArrayList(map, arrayList));
+    public ParsedRequest processHashMap(HashMap<String, Words> map) {
+        ArrayList<WordType> typeArrayList = getTheArrayList(map);
+        return new ParsedRequest(typeArrayList);
     }
 
-    private ArrayList<WordType> setTheArrayList(HashMap<String, Words> map, ArrayList<WordType> list) {
+    private ArrayList<WordType> getTheArrayList(HashMap<String, Words> map) {
+        ArrayList<WordType> list = new ArrayList<>();
         int i = 0;
         for(Map.Entry<String, Words> entry : map.entrySet()){
             list.add(i, new WordType(entry.getKey(), entry.getValue()));
@@ -24,4 +25,5 @@ public class Parser {
         }
         return list;
     }
+
 }
