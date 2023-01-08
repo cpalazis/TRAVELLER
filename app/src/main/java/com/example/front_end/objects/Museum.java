@@ -1,5 +1,7 @@
 package com.example.front_end.objects;
 
+import java.util.List;
+
 public class Museum {
     private String name;
     private String placeId;
@@ -7,17 +9,22 @@ public class Museum {
     private float rating;
     private double lat;
     private double lng;
+    private String body;
+    private List<String> images;
 
     public Museum() {
     }
 
-    public Museum(String name, String placeId, String vicinity, float rating, double lat, double lng) {
+    public Museum(String name, String placeId, String vicinity, float rating, double lat, double lng,
+                  String body, List<String> images) {
         this.name = name;
         this.placeId = placeId;
         this.vicinity = vicinity;
         this.rating = rating;
         this.lat = lat;
         this.lng = lng;
+        this.body = body;
+        this.images = images;
     }
 
     public String getName() {
@@ -66,5 +73,21 @@ public class Museum {
 
     public void setLng(double lng) {
         this.lng = lng;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
     }
 }
