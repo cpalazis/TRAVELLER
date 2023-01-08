@@ -6,14 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.front_end.objects.CoffeeShop;
-import com.example.front_end.objects.Sight;
+import com.example.front_end.objects.*;
 import com.example.front_end.utilities.UtilityClass;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,11 +42,11 @@ public class TopFive extends AppCompatActivity {
         ImageView img4 = findViewById(R.id.image4);
         ImageView img5 = findViewById(R.id.image5);
 
-        ArrayList<Museum> museum = UtilityClass.getInstance().getMuseumList();
-        ArrayList<Hotel> hotel = UtilityClass.getInstance().getHotelList();
-        ArrayList<Bank> bank = UtilityClass.getInstance().getBankList();
+        ArrayList<Museum> museum = UtilityClass.getInstance().getMuseums();
+        ArrayList<Hotel> hotel = UtilityClass.getInstance().getHotels();
+        ArrayList<Bank> bank = UtilityClass.getInstance().getBanks();
         ArrayList<CoffeeShop> caffe = UtilityClass.getInstance().getCoffeeShopList();
-        ArrayList<Restaurant> restaurant = UtilityClass.getInstance().getRestaurantList();
+        ArrayList<Restaurant> restaurant = UtilityClass.getInstance().getRestaurants();
         ArrayList<Sight> sight = UtilityClass.getInstance().getSightList();
 
        if(museum != null){

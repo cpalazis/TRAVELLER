@@ -93,8 +93,8 @@ public class MainActivity extends AppCompatActivity {
             case SENDARRAYCOFFEESHOP:
                 return new SendCoffeeShop(setTheHalfUrl(parsedRequest.getTypeArrayList()),
                         parsedRequest.getTypeArrayList().get(0).getWords(), findActivity(parsedRequest.getTypeArrayList()));
-            case SENDMUSUEM:
-            case SENDARRAYMUSUEM:
+            case SENDMUSEUM:
+            case SENDARRAYMUSEUM:
                 return new SendMuseum(setTheHalfUrl(parsedRequest.getTypeArrayList()),
                         parsedRequest.getTypeArrayList().get(0).getWords(), findActivity(parsedRequest.getTypeArrayList()));
             case SENDBANK:
@@ -493,7 +493,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void send() {
             switch (words){
-                case SENDMUSUEM:
+                case SENDMUSEUM:
                     Service service = new Service();
                     service.getJSONObject(MainActivity.this, name, new Service.VolleyResponseListener() {
                         @Override
@@ -514,7 +514,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
                     break;
-                case SENDARRAYMUSUEM:
+                case SENDARRAYMUSEUM:
                     Service service1 = new Service();
                     service1.getJSONArray(MainActivity.this, name, new Service.VolleyResponseListener() {
                         @Override
@@ -822,9 +822,17 @@ public class MainActivity extends AppCompatActivity {
             case SENDSIGHT:
             case SENDCOFFEESHOP:
             case SENDHOSPITAL:
+            case SENDHOTEL:
+            case SENDBANK:
+            case SENDRESTAURANT:
+            case SENDMUSEUM:
             case SENDARRAYSIGHT:
             case SENDARRAYCOFFEESHOP:
             case SENDARRAYHOSPITAL:
+            case SENDARRAYBANK:
+            case SENDARRAYRESTAURANT:
+            case SENDARRAYHOTEL:
+            case SENDARRAYMUSEUM:
                 return findTheCorrectHalfUrl(wordTypes);
             case SENDARRAYTOWN:
             case SENDARRAYFOO:
@@ -843,16 +851,28 @@ public class MainActivity extends AppCompatActivity {
             case SENDARRAYHOSPITAL:
             case SENDARRAYCOFFEESHOP:
             case SENDARRAYSIGHT:
+            case SENDARRAYBANK:
+            case SENDARRAYRESTAURANT:
+            case SENDARRAYHOTEL:
+            case SENDARRAYMUSEUM:
                 if (wordTypes.get(1).getWords() == Words.TOWN) {
                     return wordTypes.get(0).getPlace() + "/" + wordTypes.get(0).getPlace();
                 }
             case SENDCOFFEESHOP:
             case SENDSIGHT:
             case HOSPITAL:
+            case SENDHOTEL:
+            case SENDBANK:
+            case SENDRESTAURANT:
+            case SENDMUSEUM:
                 switch(wordTypes.get(1).getWords()){
                     case SIGHT:
                     case HOSPITAL:
                     case COFFEESHOP:
+                    case BANK:
+                    case HOTEL:
+                    case RESTAURANT:
+                    case MUSEUM:
                         return wordTypes.get(1).getPlace()+"/"+wordTypes.get(0).getPlace();
                 }
             case SENDARRAYFOO:

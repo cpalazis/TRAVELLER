@@ -10,9 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.front_end.objects.CoffeeShop;
-import com.example.front_end.objects.Sight;
-import com.example.front_end.objects.Town;
+import com.example.front_end.objects.*;
 import com.example.front_end.utilities.UtilityClass;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
@@ -40,11 +38,11 @@ public class Display extends AppCompatActivity {
 
 
         ArrayList<Town> town = UtilityClass.getInstance().getTownList();
-        ArrayList<Museum> museum = UtilityClass.getInstance().getMuseumList();
-        ArrayList<Hotel> hotel = UtilityClass.getInstance().getHotelList();
-        ArrayList<Bank> bank = UtilityClass.getInstance().getBankList();
+        ArrayList<Museum> museum = UtilityClass.getInstance().getMuseums();
+        ArrayList<Hotel> hotel = UtilityClass.getInstance().getHotels();
+        ArrayList<Bank> bank = UtilityClass.getInstance().getBanks();
         ArrayList<CoffeeShop> caffe = UtilityClass.getInstance().getCoffeeShopList();
-        ArrayList<Restaurant> restaurant = UtilityClass.getInstance().getRestaurantList();
+        ArrayList<Restaurant> restaurant = UtilityClass.getInstance().getRestaurants();
         ArrayList<Sight> sight = UtilityClass.getInstance().getSightList();
 
         //Display for City
@@ -59,7 +57,7 @@ public class Display extends AppCompatActivity {
         else if (museum != null){
             infoTxt.setText("Informations for Museum: " + museum.get(idx).getName()); //name museum
             Picasso.with(this).load(museum.get(idx).getImages().get(0)).resize(600,300).into(img); //museum image url
-            descriptionTxt.setText(museum.get(idx).getExcerpt()); // description of the museum
+            descriptionTxt.setText(museum.get(idx).getBody()); // description of the museum
 
         }
 
@@ -67,7 +65,7 @@ public class Display extends AppCompatActivity {
         else if (hotel != null){
             infoTxt.setText("Informations for Hotel: " + hotel.get(idx).getName()); //hotel city
             Picasso.with(this).load(hotel.get(idx).getImages().get(0)).resize(600,300).into(img); //hotel image url
-            descriptionTxt.setText(hotel.get(idx).getExcerpt()); // description of the hotel
+            descriptionTxt.setText(hotel.get(idx).getBody()); // description of the hotel
 
         }
 
@@ -75,7 +73,7 @@ public class Display extends AppCompatActivity {
         else if (bank != null){
             infoTxt.setText("Informations for Bank: " + bank.get(idx).getName()); //name bank
             Picasso.with(this).load(bank.get(idx).getImages().get(0)).resize(600,300).into(img); //bank image url
-            descriptionTxt.setText(bank.get(idx).getExcerpt()); // description of the bank
+            descriptionTxt.setText(bank.get(idx).getBody()); // description of the bank
 
         }
 
@@ -91,7 +89,7 @@ public class Display extends AppCompatActivity {
         else if (restaurant != null){
             infoTxt.setText("Informations for Restaurant: " + restaurant.get(idx).getName()); //name restaurant
             Picasso.with(this).load(restaurant.get(idx).getImages().get(0)).resize(600,300).into(img); //restaurant image url
-            descriptionTxt.setText(restaurant.get(idx).getExcerpt()); // description of the restaurant
+            descriptionTxt.setText(restaurant.get(idx).getBody()); // description of the restaurant
 
         }
 
@@ -109,11 +107,11 @@ public class Display extends AppCompatActivity {
         //DISPLAY MAP
         descriptionTxt.setMovementMethod(new ScrollingMovementMethod());
 
-        map.setOnClickListener(new View.OnClickListener() {
+       map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),MapActivity.class);
-                startActivity(intent);
+                /*Intent intent=new Intent(getApplicationContext(),MapActivity.class);
+                startActivity(intent);*/
             }
         });
 
