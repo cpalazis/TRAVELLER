@@ -55,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         top.setOnClickListener(v -> {
-            SendFoo foo = new SendFoo("d4867d8b-b5d5-4a48-a4ab-79131b5809b8", Words.SENDARRAYFOO, "TestActivity");
-            foo.send();
-            /*SendTown topTowns = new SendTown("topCities", Words.SENDARRAYTOWN, "TownsActivity");
-            topTowns.send();*/
+            //SendFoo foo = new SendFoo("d4867d8b-b5d5-4a48-a4ab-79131b5809b8", Words.SENDARRAYFOO, "TestActivity");
+            //foo.send();
+            SendTown topTowns = new SendTown("topCities", Words.SENDARRAYTOWN, "TownsActivity");
+            topTowns.send();
         });
 
         search.setOnClickListener(v -> {
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -174,8 +174,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
-
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -224,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -246,7 +245,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -295,7 +294,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -317,7 +316,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -367,7 +366,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -388,7 +387,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -439,7 +438,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -460,7 +459,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -510,7 +509,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -531,7 +530,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -581,7 +580,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -602,7 +601,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -653,7 +652,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -674,7 +673,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -725,7 +724,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -745,7 +744,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onError(String message) {
                             showErrorMessage(message);
-                            setContentView(R.layout.activity_main);
+                            openActivity("MainActivity");
                         }
                     });
                     break;
@@ -808,6 +807,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent testIntent = new Intent(this, TestActivity.class);
                 startActivity(testIntent);
                 break;
+            case "MainActivity":
+                Intent mainIntent = new Intent(this, MainActivity.class);
+                startActivity(mainIntent);
+                break;
+
         }
     }
 
@@ -856,8 +860,15 @@ public class MainActivity extends AppCompatActivity {
             case SENDARRAYHOTEL:
             case SENDARRAYMUSEUM:
                 if (wordTypes.get(1).getWords() == Words.TOWN) {
-                    return wordTypes.get(0).getPlace() + "/" + wordTypes.get(0).getPlace();
+                    return wordTypes.get(0).getPlace() + "/" + setCorrectTownString(wordTypes.get(1).getPlace());
                 }
+                else if(wordTypes.get(1).getWords() == Words.ACTIVITY){
+                    return wordTypes.get(0).getPlace();
+                }
+                else{
+                    return wordTypes.get(1).getPlace()+"/"+wordTypes.get(0).getPlace();
+                }
+
             case SENDCOFFEESHOP:
             case SENDSIGHT:
             case HOSPITAL:
